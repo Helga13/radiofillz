@@ -1,0 +1,8 @@
+@include font-face('elmessiriRegular', "../fonts/elmessiriRegular" ,null, null, ttf eot woff svg);
+@include font-face('elmessiriMedium', "../fonts/elmessiriMedium" ,null, null, ttf eot woff svg);
+@include font-face('elmessiriBold', "../fonts/elmessiriBold" ,null, null, ttf eot woff svg);
+@include font-face('elmessiriSemibold', "../fonts/elmessiriSemibold" ,null, null, ttf eot woff svg);
+@include font-face('waterlilyRegular', "../fonts/waterlilyRegular" ,null, null, ttf eot woff svg);
+
+$mainColor: #2b2b2b; /*dark*/
+$addColor: #977c5a; /*gold*/

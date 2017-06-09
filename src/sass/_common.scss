@@ -1,0 +1,356 @@
+/* --- general styles --- */
+
+* {
+	outline: none;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	/* Sets up the Base 10 stuff 100%/1.6 */
+	height: 100%;
+}
+
+body {
+	background: url('../img/bg_top.jpg') no-repeat top 96px center, #2b2b2b;
+//	background-size: cover;
+	background-size: 100% auto;
+	min-height: 100vh;
+	height: 100%;
+	width: 100%;
+	color: $mainColor;
+	font-family: 'elmessiriRegular', $font-stack-helvetica;
+	@include font-size(1.6);
+//	@include line-height(2.7);
+	font-smoothing: antialiased;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+h1,
+h2,
+h3,
+h4,
+h5{
+	margin: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	li {
+		list-style: none;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+p {
+	@include font-size(1.6);
+	@include line-height(3.2);
+}
+
+.btn{
+//	border: none;
+//	background-color: #328925;
+//	color: #fff;
+//	display: inline-block;
+//	width: 100%;
+//	border-radius: 16px;
+//	height: 34px;
+//	line-height: 34px;
+//	cursor: pointer;
+//	font-family: 'OpenSans-Light', $font-stack-helvetica;
+//	@include font-size(1.2);
+//	text-align: center;
+}
+
+.col{
+	padding: 0 10px;
+}
+
+.wrap{
+	max-width: 1440px;
+	width: 100%;
+//	padding: 0 10px;
+	margin: 0 auto;
+	@include font-size(0);
+}
+
+/* --- header styles --- */
+
+header{
+	min-height: 96px;
+	background-color: $mainColor;
+	text-align: right;
+	.wrap{
+		padding: 0 16px;
+	}
+	margin-bottom: 64px;
+}
+
+.logo{
+	color: $addColor;
+	@include font-size(6.4);
+	@include line-height(6.5);
+	float: left;
+	width: 214px;
+	padding: 10px 0;
+	.logo_link{
+		display: inline-block;
+		fill: $addColor;
+		font-family: 'waterlilyRegular', $font-stack-helvetica;
+	}
+}
+
+.menu{
+	@include font-size(0);
+	display: inline-block;
+	position: relative;
+	margin: 22px 12px 22px 0;
+	.menu_item{
+		color: #fff;
+		@include font-size(1.6);
+		@include line-height(3.2);
+		display: inline-block;
+		opacity: .6;
+		transition: opacity .3s ease-in-out;
+		&:hover,
+		&.active{
+			opacity: 1;
+		}
+		a{
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			padding: 10px 16px;
+		}
+	}
+}
+
+#border {
+	height: 8px;
+	background-color: $addColor;
+	position: absolute;
+}
+
+.lang{
+	display: inline-block;
+	position: relative;
+	padding-left: 27px;
+	border-left: 2px solid #fff;
+	margin: 32px 0;
+	li{
+		@include font-size(1.6);
+		@include line-height(3.2);
+		color: #fff;
+		opacity: .6;
+		display: inline-block;
+		margin: 0 3px;
+		&.active{
+			opacity: 1;
+		}
+	}
+}
+
+/* --- footer styles --- */
+
+.footer_top{
+	text-align: center;
+	padding: 24px 0;
+	position: relative;
+	.bg{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		img{
+			width: 100%;
+		}
+	}
+	.logo{
+		float: none;
+		margin: 0 auto;
+	}
+}
+
+.socials{
+	margin: 8px 0 90px;
+	li{
+		display: inline-block;
+		width: 48px;
+		margin: 0 6px;
+	}
+	.socials_itam{
+		display: inline-block;
+		width: 100%;
+		> img{
+			width: 100%;
+		}
+	}
+}
+
+.copyright{
+	text-align: center;
+	height: 63px;
+	line-height: 63px;
+	color: $addColor;
+	background-color: #333;
+}
+
+
+
+/* --- content styles --- */
+
+.cls-1{
+	font-family: 'waterlilyRegular', $font-stack-helvetica;
+}
+
+.main_logo{
+	width: 33.333%;
+	margin: 64px auto 78px;
+	padding: 0 16px;
+	.main_logo_inner{
+		color: $addColor;
+		border: 1px solid $addColor;
+		text-align: center;
+		background-color: $mainColor;
+		padding: 64px 24px 30px;
+	}
+	.logo_img{
+		font-size: 120px;
+		fill: $addColor;
+		font-family: 'waterlilyRegular', $font-stack-helvetica;
+	}
+}
+
+.section_title{
+	@include font-size(4.8);
+	@include line-height(6.4);
+	font-family: 'elmessiriBold', $font-stack-helvetica;
+	color: $addColor;
+	text-align: center;
+	padding: 42px 16px 22px;
+	.pseudo{
+		position: relative;
+		&:before,
+		&:after{
+			content: '';
+			display: inline-block;
+			position: absolute;
+		}
+		&:before{
+			background: url('../img/fly_top.png') no-repeat;
+			background-size: 46px 48px;
+			width: 46px;
+			height: 48px;
+			top: -24px;
+			left: 78px;
+		}
+		&:after{
+			background: url('../img/fly_bottom.png') no-repeat;
+			background-size: 74px 54px;
+			width: 74px;
+			height: 54px;
+			bottom: -24px;
+			right: 62px;
+		}
+	}
+}
+
+.developments{
+	margin-bottom: 64px;
+	@include clearfix;
+}
+
+.developments_item{
+//	width: 33.333%;
+	padding: 16px;
+//	display: inline-block;
+//	vertical-align: top;
+}
+
+.developments_item_inner{
+	background-color: $addColor;
+	cursor: pointer;
+	border: 1px solid $addColor;
+	.time{
+		@include font-size(6.4);
+		@include line-height(6.4);
+		font-family: 'elmessiriBold', $font-stack-helvetica;
+		padding: 30px 0 12px;
+	}
+}
+
+.developments_img{
+	overflow: hidden;
+	img{
+		width: 100%;
+		opacity: .5;
+		transform: translateZ(0);
+		transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+	}
+}
+
+.developments_text{
+	@include font-size(1.6);
+	@include line-height(3.2);
+	padding: 0 20px 16px;
+}
+
+.developments_item_inner:hover{
+	img{
+		opacity: 1;
+		transform: scale(1.1);
+	}
+}
+
+/* salvattore */
+
+.developments[data-columns]::before {
+	content: '3 .column.size-1of3';
+}
+
+.column { float: left; }
+.size-1of1 { width: 100%; }
+.size-1of2 { width: 50%; }
+.size-1of3 { width: 33.333%; }
+
+/* salvattore end */
+
+.page_title{
+	display: inline-block;
+	@include font-size(3.2);
+	line-height: 64px;
+	height: 64px;
+	padding: 0 18px;
+	background-color: $addColor;
+	margin-left: 17.778%;
+}
+
+.page_subtitle{
+	@include font-size(4.0);
+	@include line-height(4.8);
+	font-family: 'elmessiriBold', $font-stack-helvetica;
+	color: #fff;
+	margin: 62px 0 55px 17.778%;
+}
+
+.table{
+    display: table;
+    width: 100%;
+    height: 250px;    
+    background: #ccc;
+}
+.table-item{
+    display: table-cell;
+    vertical-align: top;    
+    border: 1px solid #000;
+}
+.table-item-row{
+    display: table-row;    
+}
