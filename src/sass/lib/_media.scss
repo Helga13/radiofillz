@@ -14,6 +14,9 @@
 	.wrap{
 		max-width: 960px;
 	}
+	.photo_item .about_inner p{
+		@include line-height(2.6);
+	}
 }
 
 @media only screen and (max-width : 992px) {
@@ -25,6 +28,18 @@
 	}
 	.main_logo{
 		width: 50%;
+	}
+	.photo_item .about_inner p{
+		@include line-height(2.2);
+	}
+	.photo_item{
+		height: 272px;
+		&.h2{
+		height: 632px;
+	}
+		&.about{
+			height: 360px;
+		}
 	}
 }
 
@@ -46,6 +61,21 @@
 	}
 	.menu{
 		margin-right: 0;
+	}
+	.photo_item{
+		height: 222px;
+		width: 100%;
+		&.h2{
+			height: 222px;
+		}
+		&.about{
+			height: auto;
+			.about_inner{
+				width: 100%;
+				padding-top: 18px;
+				padding-bottom: 20px;
+			}
+		}
 	}
 }
 

@@ -81,6 +81,10 @@ p {
 	@include font-size(0);
 }
 
+.f_right{
+	float: right;
+}
+
 /* --- header styles --- */
 
 header{
@@ -353,4 +357,49 @@ header{
 }
 .table-item-row{
     display: table-row;    
+}
+
+.about_block{
+	@include clearfix;
+}
+
+.photo_item{
+	position: relative;
+	overflow: hidden;
+	border: 16px solid transparent;
+	width: 33.333%;
+	float: left;
+	height: 322px;
+	img{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		min-height: 100%;
+		min-width: 100%;
+		object-fit: cover;
+	}
+	&.h2{
+		height: 672px;
+	}
+	&.f_right{
+		float: right;
+	}
+	&.about{
+		height: 350px;
+	}
+	.about_inner{
+		display: table;
+		.heading{
+			@include font-size(2.4);
+			font-family: 'elmessiriBold', $font-stack-helvetica;
+		}
+		background-color: $addColor;
+		padding: 0 17px 10px;
+		height: 100%;
+	}
+	.about_inner__inner{
+		display: table-cell;
+		vertical-align: middle;
+	}
 }
