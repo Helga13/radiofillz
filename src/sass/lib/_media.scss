@@ -8,6 +8,22 @@
 	.wrap{
 		max-width: 1270px;
 	}
+	.single_event_inner .single_event_description .col{
+		&.first{
+			width: calc(100% - 464px);
+		}
+		&.last{
+			width: 100%;
+			.descr_item{
+				width: 50%;
+				float: left;
+			}
+		}
+	}
+	.single_event_inner{
+		height: auto;
+	}
+	
 }
 
 @media only screen and (max-width : 1023px) {
@@ -16,6 +32,44 @@
 	}
 	.photo_item .about_inner p{
 		@include line-height(2.6);
+	}
+	.photo_list[data-columns]::before {
+		content: '4 .column.size-1of4';
+	}
+	.search_block {
+		.col.col2.label{
+			width: 100%;
+			text-align: left;
+		}
+		.col.col4{
+			width: 66.666%;
+		}
+		.col.col2:not(.label){
+			width: 33.333%;
+		}
+		label{
+			@include line-height(1.6);
+		}
+		.search_name,
+		.search_period{
+			padding-top: 10px;
+		}
+	}
+	.video_item {
+    width: 50%;
+	}
+	.single_event_inner .single_event_cover{
+		width: 100%;
+		min-height: 300px;
+	}
+	.single_event_inner .single_event_description .col{
+		&.first,
+		&.last .descr_item{
+			width: 100%;
+		}
+	}
+	.single_event_inner .single_event_description{
+		padding-bottom: 16px;
 	}
 }
 
@@ -26,6 +80,7 @@
 	.developments[data-columns]::before {
 		content: '2 .column.size-1of2';
 	}
+	
 	.main_logo{
 		width: 50%;
 	}
@@ -77,14 +132,50 @@
 			}
 		}
 	}
+	.photo_list[data-columns]::before {
+		content: '3 .column.size-1of3';
+	}
+	.search_block {
+		.col.col2,
+		.col.col4,
+		.col.col2:not(.label){
+			width: 100%;
+		}
+		.col.col2.rel{
+			width: 50%;
+		}
+	}
 }
 
 @media only screen and (max-width : 600px) {
-	
+	.video_item {
+    width: 100%;
+	}
+	.audio_inner{
+		.caption{
+			height: auto;
+		}
+		.description{
+			width: 77.6%;
+		}
+		.price{
+			width: 100%;
+			padding: 0 16px;
+			.cost,
+			.btn_buy{
+				width: 50%;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
 }
 
 @media only screen and (max-width : 480px) {
 	.developments[data-columns]::before {
+		content: '1 .column.size-1of1';
+	}
+	.photo_list[data-columns]::before {
 		content: '1 .column.size-1of1';
 	}
 	.logo{
@@ -97,6 +188,11 @@
 	.section_title{
 		@include font-size(4.6);
 		@include line-height(4.8);
+	}
+	.tabs .tab{
+		@include font-size(1.8);
+    line-height: 54px;
+    height: 54px;
 	}
 }
 
