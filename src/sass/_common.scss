@@ -32,6 +32,7 @@ h3,
 h4,
 h5{
 	margin: 0;
+	font-weight: normal;
 }
 
 ul {
@@ -154,11 +155,30 @@ header{
 		@include font-size(1.6);
 		@include line-height(3.2);
 		display: inline-block;
+		position: relative;
 		opacity: .6;
 		transition: opacity .3s ease-in-out;
+		&:after{
+			content: '';
+			height: 8px;
+			background-color: $addColor;
+			position: absolute;
+			width: 100%;
+			left: 0;
+			bottom: -22px;
+			transform: scale3d(0,1,1);
+			transform-origin: center left;
+			transition: transform 0.3s ease-in-out;
+		}
 		&:hover,
 		&.active{
 			opacity: 1;
+		}
+		&:hover:after{
+			transform: scale3d(1,1,1);
+		}
+		&.active:after{
+			transform: scale3d(1,1,1);
 		}
 		a{
 			display: inline-block;
@@ -169,11 +189,11 @@ header{
 	}
 }
 
-#border {
-	height: 8px;
-	background-color: $addColor;
-	position: absolute;
-}
+//#border {
+//	height: 8px;
+//	background-color: $addColor;
+//	position: absolute;
+//}
 
 .lang{
 	display: inline-block;
@@ -476,6 +496,7 @@ header{
 .tabs{
 	.tabs__caption{
 		text-align: left;
+		margin-bottom: -1px;
 	}
 	.tab{
 		@include font-size(3.2);
@@ -494,21 +515,29 @@ header{
 		}
 	}
 	.tabs_content{
-		display: none;
+//		display: none;
+		display: block;
+		height: 0;
+		overflow: hidden;
 		text-align: center;
 		&.active{
-			display: block;
+//			display: block;
+			height: auto;
 		}
 	}
+}
+
+.tabs .tabs_content:not(.active) *{
+	overflow: hidden;
+	height: 0;
 }
 
 .search_block{
 	border: 1px solid $addColor;
 	background-color: $mainColor;
 	padding: 8px 0;
-	margin-top: -1px;
 	margin-bottom: 16px;
-	label{
+	.label_label{
 		@include font-size(1.6);
 		@include line-height(3.2);
 		color: $addColor;
@@ -668,6 +697,12 @@ header{
 			vertical-align: top;
 		}
 	}
+}
+
+/* players */
+
+.mejs__container{
+	width: 100%!important;
 }
 
 .v_title,
